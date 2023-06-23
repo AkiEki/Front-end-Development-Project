@@ -1,4 +1,4 @@
-# bruh6
+# Blog Prototype
 
 ## Project setup
 ```
