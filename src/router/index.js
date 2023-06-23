@@ -1,48 +1,54 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-
-
 const routes = [
-	//  整体布局页面
-	{
-      path: '/main',
-      name: 'main',
-      component: () => import("@/views/MainView"),
-		// 重定向，自动跳转到指定路由
-		redirect: "/homepage",
-		//嵌套路由
-		children: [
-			{
-          path: '/homepage',
-          name: '系统主页', 
-          component: () => import("@/views/HomeView"),
-			},
-			{
-          path: '/grade',
-          name: '成绩管理', 
-          component: () => import("@/views/HomeView"),
-			},
-			{
-          path: '/information',
-          name: '信息管理', 
-          component: () => import("@/views/AboutView"),
-			},
-			{
-          path: '/password',
-          name: '密码修改', 
-          component: () => import("@/views/HomeView"),
-			},
-			{
-          path: '/course',
-          name: '课程管理', 
-          component: () => import("@/views/HomeView"),
-			}
-			
-		]
-	},
+  {
+    path: '/',
+    name: 'home',
+    component: () => import('../views/HomeView.vue')
+  },
+  {
+    path: '/TimeLine',
+    name: 'timeline',
+    component: () => import('../views/TimelineView.vue')
+  },
+  {
+    path: '/UsefulTools',
+    name: 'tools',
+    component: () => import('../views/ToolsView.vue')
+  },
+  {
+    path: '/MoreInfo',
+    name: 'more',
+    
+    component: () => import('../views/InfoView.vue')
+  },
+  {
+    path: '/G_OverHeat',
+    name: 'more1',
+    
+    component: () => import('../views/articles/OverHeat.vue')
+  },
+  {
+    path: '/G_Moment',
+    name: 'more2',
+    
+    component: () => import('../views/articles/MomentArticle.vue')
+  },
+  {
+    path: '/G_Moment_2',
+    name: 'more3',
+    
+    component: () => import('../views/articles/IdeasAboutMoment.vue')
+  },
+  {
+    path: '/Baba',
+    name: 'baba',
+    component: () => import('../views/articles/BabaIsYou.vue')
+  }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
+  mode: 'history',
   routes
 })
 
